@@ -1,0 +1,43 @@
+{
+	"name": "zookeeper",
+	"description": null,
+	"permissions": "PUBLIC_READ_WRITE",
+	"pages": [
+		{
+			"name": "zookeeper",
+			"description": null,
+			"widgets": [
+				{
+					"visualization": {
+						"id": "viz.line"
+					},
+					"layout": {
+						"column": 1,
+						"row": 1,
+						"height": 3,
+						"width": 4
+					},
+					"title": "Zookeeper packets received by cluster",
+					"rawConfiguration": {
+						"facet": {
+							"showOtherSeries": false
+						},
+						"legend": {
+							"enabled": true
+						},
+						"nrqlQueries": [
+							{
+								"accountId": 1,
+								"query": "FROM ZookeeperMonitor SELECT max(zk_packets_received) FACET zk_cluster LIMIT 100 TIMESERIES "
+							}
+						],
+						"yAxisLeft": {
+							"zero": true
+						}
+					},
+					"linkedEntityGuids": null
+				}
+			]
+		}
+	]
+}

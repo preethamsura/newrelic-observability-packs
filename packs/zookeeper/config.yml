@@ -1,0 +1,17 @@
+name: Zookeeper
+
+description: |+
+  This is an observability pack for zookeeper.
+
+level: New Relic
+
+icon: icon.png
+logo: logo.png
+website: https://newrelic.com/
+
+authors:
+  - The Fantastic Five
+
+instrumentation:
+  - type: newrelic-infra-ohi
+    name: Zookeeper

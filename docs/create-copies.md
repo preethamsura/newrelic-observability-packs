@@ -13,9 +13,9 @@ keyword_dict: object where every key corresponds to a keyword that will be searc
 
 copies: list of objects consisting of a template_file and a target_location
 
-        template_file: path to whatever template file is being used, this file will be searched for keyword matches
+   template_file: path to whatever template file is being used, this file will be searched for keyword matches
         
-        target_location: filename and path of where the generated files should be saved, NOTE: this can contain the searched for keyword which will allow unique files to be generated
+   target_location: filename and path of where the generated files should be saved, NOTE: this can contain the searched for keyword which will allow unique files to be generated
 
 sample:
 ```json

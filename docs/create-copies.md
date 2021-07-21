@@ -8,9 +8,13 @@ PATH_TO_JSON_FILE is the path to the JSON file that describes the configuration 
 JSON attributes (all fields are required):
 
 length: number of files to be created
+
 keyword_dict: object where every key corresponds to a keyword that will be searched for in your template files, the values are a list where the first entry will replace the keyword in the first file created and the nth entry will replace the keyword in the nth file created.
+
 copies: list of objects consisting of a template_file and a target_location
+
         template_file: path to whatever template file is being used, this file will be searched for keyword matches
+        
         target_location: filename and path of where the generated files should be saved, NOTE: this can contain the searched for keyword which will allow unique files to be generated
 
 sample:

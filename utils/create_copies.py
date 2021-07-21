@@ -3,33 +3,33 @@ import os
 import json
 import sys
 
-template_path = ""
-copy_path = ""
-keyword_dict = {}
-length = 0
+def main():
+    # First we parse the json based on the json path
+    create_copies(sys.argv[1])
 
 """
-Given some input json file with the metadata for how we are going
-to be copying files, we take the json and get the corresponding
-template_path, copy_path, keyword_dict, and length. As a note, these are global
-variables which we update.
 
-INPUTS:
-json_location -> path to the json file we want to parse
 """
-def parse_json(json_location):
-    global template_path, copy_path, keyword_dict, length
+def create_copies(json_location):
     with open(json_location) as json_file:
         data = json.load(json_file)
-        template_path = data['template']
-        copy_path = data['copy_path']
-        keyword_dict = data['keywords']
+
+        # Keywords and length are constant regardless of files we are copying
+        keyword_dict = data['keyword_dict']
         length = data['length']
+
+        # We can copy over multiple different files using the same keywords
+        copies = data['copies']
+        for copy in copies:
+            template_file = copy['template_file']
+            target_location = copy['target_location']
+            copy_file_location(template_file, keyword_dict, target_location, length)
 
 """
 
 """
 def copy_file_location(template_file, keyword_dict, target_location, length):
+    print(f"create_copies.py: Copying template file: {template_file}")
     # Make sure we do have enough keywords to replace given our length
     for keywords in keyword_dict.values():
         assert len(keywords) >= length
@@ -59,8 +59,5 @@ def copy_file_location(template_file, keyword_dict, target_location, length):
             f2 = open(filename, "w")
             f2.write(file_contents[i])
 
-# First we parse the json based on the json path
-parse_json(sys.argv[1])
-
-# We update the files with their keywords and copy the files to their new locations
-copy_file_location(template_path, keyword_dict, copy_path, 2)
+if __name__ == "__main__":
+    main()

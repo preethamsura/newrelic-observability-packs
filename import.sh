@@ -10,9 +10,9 @@ while (( "$#" )); do
   case "$2" in
     -a|--copy)
       COPY_FLAG=$3
-      echo 'Creating copies from copy json at:' $3
+      echo 'import.sh: Creating copies from copy json at:' $3
       python3 utils/create_copies.py $3
-      echo 'Copy creation was successful'
+      echo 'import.sh: Copy creation completed'
       shift
       ;;
     -*|--*=) # unsupported flags

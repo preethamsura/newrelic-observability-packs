@@ -1,9 +1,9 @@
 {
-    "name": "Kafka",
+    "name": "Kafka-Observability",
     "description": "",
     "pages": [
         {
-            "name": "Kafka",
+            "name": "Kafka-Observability",
             "description": "",
             "widgets": [
                 {

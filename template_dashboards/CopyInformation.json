@@ -1,0 +1,19 @@
+{
+  "length": 2,
+  "keyword_dict": {
+    "CLUSTER-NAME": [
+      "test-odd-wire",
+      "stg-frugal-watch"
+    ]
+  },
+  "copies": [
+    {
+      "template_file": "./template_dashboards/KafkaPartitionDashboardTemplate.json",
+      "target_location": "./packs/kafka/dashboards/KafkaPartitionDashboard(<CLUSTER-NAME>).json"
+    },
+    {
+      "template_file": "./template_dashboards/Partition CPU Utilization Template.yml",
+      "target_location": "./packs/kafka/alerts/Partition CPU Utilization (<CLUSTER-NAME>).yml"
+    }
+  ]
+}

@@ -14,6 +14,7 @@ copies: list of objects consisting of a template_file and a target_location
         target_location: filename and path of where the generated files should be saved, NOTE: this can contain the searched for keyword which will allow unique files to be generated
 
 sample:
+```json
 {
   "length": 2,
   "keyword_dict": {
@@ -33,6 +34,7 @@ sample:
     }
   ]
 }
+```
   
 template files:
   template files should be the exact same format as file in the destination would be with the exception that everywhere there is the string "<KEYWORD>" (with KEYWORD being one of the defined search terms in the keyword_dict attribute of the JSON config file) it will be replaced by one of the appropriate values.

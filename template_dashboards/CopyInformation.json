@@ -1,0 +1,8 @@
+{
+  "template": "./template_dashboards/KafkaPartitionDashboardTemplate.json",
+  "copy_path": "./packs/kafka/dashboards/KafkaPartitionDashboard<CLUSTER-NAME>.json",
+  "length": 2,
+  "keywords": {
+    "CLUSTER-NAME": ["test-odd-wire", "stg-frugal-watch"]
+  }
+}

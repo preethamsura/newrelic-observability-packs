@@ -16,8 +16,6 @@ def copy_directory(template_dir, keyword_dict):
             copy_file(new_path, keyword_dict)
         elif os.path.isdir(new_path):
             copy_directory(new_path, keyword_dict)
-        else:
-            print("some dumbass fucked up")
 
 def copy_file(template_file, keyword_dict):
     if not (".jpg" in template_file or ".png" in template_file or ".jpeg" in template_file):

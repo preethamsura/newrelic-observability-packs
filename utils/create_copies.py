@@ -8,7 +8,13 @@ def main():
     create_copies(sys.argv[1])
 
 """
+Inputs:
+json_location: path to JSON file as a string
 
+Opens designated JSON file, reads the content and parses information from it
+length is the number of new files to be created
+keyword_dict is a dictionary where the keys are terms that will be searched for in the template file and the values are the terms that will be substituted in where the nth entry in the list corresponds to the nth file to be created
+copies is a list of dictionaries, each with a template_file key describing the path to a file to be used as a template and a target_location key describing the path to the directory where the new files will be saved
 """
 def create_copies(json_location):
     with open(json_location) as json_file:
@@ -26,7 +32,13 @@ def create_copies(json_location):
             copy_file_location(template_file, keyword_dict, target_location, length)
 
 """
+Inputs:
+template_file: path to template file as a string
+keyword_dict: keyword search and replace pairs as a dictionary
+target_location: path to directory for saving new files as a string
+length: number of new files to be generated as in integer
 
+searches through template file and replaces keywords with designated replacement turns, generating new files and saving them in the appropriate directory
 """
 def copy_file_location(template_file, keyword_dict, target_location, length):
     print(f"create_copies.py: Copying template file: {template_file}")
